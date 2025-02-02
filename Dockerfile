@@ -1,10 +1,14 @@
-FROM python:3.13-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Создаем директорию для данных до копирования кода
+RUN mkdir -p /app/data && \
+    chmod 777 /app/data
+
 COPY . .
 
-CMD ["python", "main.py"] 
+CMD ["python", "bot.py"] 
