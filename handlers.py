@@ -48,10 +48,12 @@ async def register_handlers(dp, db_session):
         
         total_bought = sum(t.amount for t in buys)
         total_sold = sum(t.amount for t in sells)
+        invested_amount = total_bought - total_sold
         
         # Формируем основную статистику
         stats = [
             "📊 Статистика ваших P2P транзакций:\n",
+            f"💎 Текущие инвестиции: {invested_amount:,.2f} ₽\n",
             f"💰 Всего внесено: {total_bought:,.2f} ₽",
             f"📈 Всего покупок: {len(buys)}",
             f"💸 Всего продано: {total_sold:,.2f} ₽",
