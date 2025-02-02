@@ -1,0 +1,8 @@
+aiogram>=3.0.0
+pybit
+sqlalchemy>=1.4.41
+alembic
+environs>=9.5.0
+pandas>=1.5.3
+openpyxl>=3.1.2
+aiosqlite>=0.19.0  # for async SQLite support
